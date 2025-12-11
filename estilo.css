@@ -1,0 +1,394 @@
+/* estilo.css */
+/* Variáveis CSS */
+:root {
+    --laranja-principal: #f97316;
+    --laranja-claro: #fdba74;
+    --laranja-escuro: #ea580c;
+    --azul-principal: #3b82f6;
+    --azul-claro: #93c5fd;
+    --azul-escuro: #1d4ed8;
+    --cinza-claro: #f8fafc;
+    --cinza-escuro: #334155;
+    --verde-whatsapp: #25d366;
+    --verde-whatsapp-escuro: #128c7e;
+    --rosa-instagram: #e4405f;
+    --roxo-instagram: #8a3ab9;
+    --azul-linkedin: #0a66c2;
+}
+
+/* Reset e configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--cinza-escuro);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Cabeçalho/Navegação */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cabecalho.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cabecalho .nav-link {
+    color: var(--cinza-escuro);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.cabecalho .nav-link:hover {
+    color: var(--laranja-principal);
+}
+
+.botao-whatsapp {
+    background: linear-gradient(to right, var(--laranja-principal), var(--laranja-escuro));
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+    background: linear-gradient(to right, var(--laranja-escuro), #c2410c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(249, 115, 22, 0.3);
+}
+
+/* Seção Hero */
+.hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background: linear-gradient(to bottom right, #eff6ff, #ffedd5, #eff6ff);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .col-lg-6:first-child {
+    position: relative;
+    z-index: 20; 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    background-color: var(--laranja-claro);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background-color: var(--azul-claro);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.2;
+}
+
+.titulo-destaque {
+    background: linear-gradient(to right, var(--laranja-principal), var(--laranja-escuro));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.imagem-hero {
+    height: 500px;
+    object-fit: cover;
+}
+
+.overlay-hero {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.card-destaque-hero {
+    max-width: 250px;
+    transform: translateY(50%);
+}
+
+/* Cards */
+.card-servico {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.card-servico:hover {
+    border-color: var(--laranja-claro);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.icone-card {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(to bottom right, var(--laranja-principal), var(--laranja-escuro));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.card-servico:hover .icone-card {
+    transform: scale(1.1);
+}
+
+/* Equipamentos */
+.card-equipamento {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+}
+
+.card-equipamento:hover {
+    border-color: var(--laranja-claro);
+    background: linear-gradient(to bottom right, #ffedd5, #dbeafe);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção CTA */
+.cta-section {
+    background: linear-gradient(to right, var(--laranja-principal), var(--laranja-escuro));
+}
+
+/* Rodapé */
+.rodape {
+    background-color: white; /* Fundo branco */
+    color: #334155; /* Cor do texto */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Linha sutil no topo */
+}
+
+.rodape h4,
+.rodape h5,
+.rodape h6 {
+    color: #334155; /* Cor dos títulos */
+}
+
+.rodape p,
+.rodape li,
+.rodape .text-muted,
+.rodape .text-light {
+    color: #334155 !important; /* Cor do texto principal */
+    opacity: 0.9; /* Leve transparência */
+}
+
+.rodape a {
+    color: #334155;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape a:hover {
+    color: #f97316; /* Cor laranja ao passar o mouse */
+}
+
+.rodape hr {
+    border-color: rgba(51, 65, 85, 0.2); /* Linha com cor compatível */
+}
+
+/* Para o logo no rodapé */
+.rodape .logo-rodape {
+    height: 40px;
+    width: auto;
+    /* Removido o filter que deixava branco */
+}
+
+/* Estilo específico para links de contato no rodapé */
+.rodape .contato-info li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.rodape .contato-info li i {
+    margin-right: 10px;
+    color: #f97316; /* Ícones laranja */
+}
+
+/* Estilo para links de serviços no rodapé */
+.rodape .servicos-lista li {
+    transition: transform 0.2s ease;
+    padding-left: 10px;
+    position: relative;
+}
+
+.rodape .servicos-lista li:before {
+    content: "•";   
+    color: #f97316;
+    position: absolute;
+    left: 0;
+}
+
+.rodape .servicos-lista li:hover {
+    transform: translateX(5px);
+    color: #f97316;
+}
+
+/* Copyright */
+.rodape .copyright {
+    color: #334155;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Botão WhatsApp Flutuante */
+.botao-whatsapp-flutuante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--verde-whatsapp);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.botao-whatsapp-flutuante:hover {
+    transform: scale(1.1);
+    background-color: var(--verde-whatsapp-escuro);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.4s;
+}
+
+/* Utilitários */
+.badge-personalizado {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.sombra-suave {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.bg-gradient-to-bottom {
+    background: linear-gradient(to bottom, var(--cinza-claro), white);
+}
+
+.bg-gradient-to-right {
+    background: linear-gradient(to right, var(--rosa-instagram), var(--roxo-instagram));
+}
+
+/* Estilos para itens de contato */
+.contato-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contato-item:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.rede-social-item {
+    transition: all 0.3s ease;
+}
+
+.rede-social-item:hover {
+    transform: translateY(-3px);
+}
+
+.instagram-item {
+    background: linear-gradient(to right, rgba(228, 64, 95, 0.05), rgba(138, 58, 185, 0.05));
+}
+
+.linkedin-item {
+    background: rgba(10, 102, 194, 0.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+    
+    .titulo-hero {
+        font-size: 2.5rem;
+    }
+    
+    .display-5 {
+        font-size: 2.5rem;
+    }
+    
+    .card-destaque-hero {
+        position: relative !important;
+        transform: none !important;
+        margin-top: -2rem;
+        margin-left: 1rem;
+    }
+    
+    .imagem-hero {
+        height: 350px;
+    }
+    
+    .botao-whatsapp-flutuante {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .botao-whatsapp-flutuante i {
+        font-size: 1.5rem;
+    }
+}
